@@ -1,0 +1,188 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp" 
+            android:background="@drawable/aa"
+            >
+            
+                <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp" 
+        >
+
+        <Button
+            android:id="@+id/createstory_bt_1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/title_bt_1"/>
+
+        <TextView
+            android:id="@+id/createstory_tv_1"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:text="@string/createstory_tv_1"
+            android:textColor="#FFFFFF"
+            android:textSize="25px" />
+
+    </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:background="#1c252b" 
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/createstory_iv_1"
+                android:layout_width="300dp"
+               android:layout_centerHorizontal="true"
+                android:layout_height="400dp"
+                android:gravity="center">
+                
+            </ImageView>
+
+        </TableRow>
+        
+         <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:background="#1c252b" 
+            android:gravity="center">
+
+		 <!--ListView
+			
+			android:id="@+id/bookslist"
+			
+			android:layout_width="fill_parent"
+			
+			android:layout_height="wrap_content"
+			
+			/-->
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:background="#abbfd0" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:background="#abbfd0" >
+                <TextView
+                android:id="@+id/createstory_tv_2_1"
+                android:layout_marginLeft="20px"
+                android:layout_marginTop="10px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/createstory_tv_2_1" />
+                <TextView
+                android:id="@+id/createstory_tv_2_2"
+                android:layout_marginTop="10px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/createstory_tv_2_2" />
+                <TextView
+                android:id="@+id/createstory_tv_2_3"
+                android:layout_marginTop="10px"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/createstory_tv_2_3" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/createstory_tv_3"
+                    android:textSize="30px"
+                    android:layout_marginLeft="10px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/createstory_tv_3" />
+
+                <EditText
+                    android:id="@+id/titleEditText"
+                    android:layout_width="272dp"
+                    android:layout_height="wrap_content" >
+
+                    <requestFocus />
+                </EditText>
+
+            </LinearLayout>
+
+        </TableRow>
+                <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                         <TextView
+                    android:id="@+id/createstory_tv_4"
+                    android:textSize="30px"
+                    android:layout_marginLeft="10px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/createstory_tv_4" />
+
+                <EditText
+                    android:id="@+id/fameEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="32.09" >
+
+                    <requestFocus />
+                </EditText>
+
+            </LinearLayout>
+
+        </TableRow>
+               <TableRow>
+
+
+               </TableRow>
+                <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+   
+      
+                   <Button
+                       android:id="@+id/createstory_bt_2"
+                       android:layout_centerHorizontal="true"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:textSize="25px"
+                       android:textColor="#2B2B2B"
+                       android:text="@string/createstory_bt_2" />
+
+        </TableRow>
+    </TableLayout>
+
+</ScrollView>

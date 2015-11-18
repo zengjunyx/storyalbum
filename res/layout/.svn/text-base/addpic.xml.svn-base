@@ -1,0 +1,136 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#EBEBEB" >
+    <RelativeLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:gravity="center_vertical"
+        android:paddingLeft="20px"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="@string/addpic_tx_1"
+        android:textColor="#FFFFFF"
+        android:textSize="35px"
+        android:background="@drawable/ep_land_recommend_bg"/>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       
+        android:layout_below="@+id/textView1" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:background="#c5d0d9">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="320dp"
+                android:layout_height="250dp"
+                android:background="@drawable/popup_createalbum_img" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:id="@+id/addpic_tx_2"
+                android:gravity="center_vertical"
+                android:paddingLeft="20px"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="#abbfd0"
+                android:textColor="#262626"
+                android:text="@string/addpic_tx_2"
+                 />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:background="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/addpic_iv_1"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/popup_ic_gallery" />
+
+                <TextView
+                    android:id="@+id/addpic_tx_3"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textSize="30px"
+                    android:textColor="#262626"
+                    android:text="@string/story_tuku" />
+
+            </LinearLayout>
+
+        </TableRow>
+
+        <!--TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF" >
+                        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:background="@drawable/addpic_tv_back">
+
+                <ImageView
+                    android:id="@+id/addpic_iv_2"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/popup_ic_gallery" />
+
+                <TextView
+                    android:id="@+id/addpic_tx_4"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textSize="30px"
+                    android:textColor="#262626"
+                    android:text="@string/addpic_tx_4" />
+
+            </LinearLayout>
+
+        </TableRow-->
+         <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF" >
+                        
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>
+
+</ScrollView>

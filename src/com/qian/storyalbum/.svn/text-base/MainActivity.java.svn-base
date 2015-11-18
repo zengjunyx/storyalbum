@@ -1,0 +1,264 @@
+package com.qian.storyalbum;
+
+
+
+import java.util.ArrayList;
+import java.util.zip.InflaterInputStream;
+
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.MediaStore;
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.View.OnTouchListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+private Button main_bt_1;
+private Button button1;
+private ImageView main_iv_1;
+private ImageView main_iv_2;
+private TextView main_tx_1;
+private TextView mTextView;
+private TextView textnumView;
+private Button rightBut;
+private StoryalbumDB mBooksDB;
+private Cursor cur;
+private final static String TABLE_NAME = "Storyalbum_table";
+private int index = 1;
+private int totalCount;
+private String  imagePathString = null;
+private String[] imagePath;
+private int STORYALBUM_ID = 0;
+private ArrayList<String> imageSrcs = new ArrayList<String>();
+private String di;
+private String jige;
+private String title;
+private String flam;
+/*private final static String	DATABASE_NAME	= "Storyalbum.db";
+private final static String TABLE_NAME = "Storyalbum_table";
+private final static String	STORYALBUM_ID		= "Storyalbum_id";
+private final static String	STORYALBUM_TITLE		= "Storyalbum_title";
+private final static String	STORYALBUM_FAME		= "Storyalbum_fame";
+private SQLiteDatabase		mSQLiteDatabase	= null;*/
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+	
+	//打开数据库
+		creatCur();
+		textnumView = (TextView) findViewById(R.id.textnum);		
+		rightBut = (Button)this.findViewById(R.id.nextbut);
+		mTextView = (TextView) findViewById(R.id.main_tx_2);
+		main_tx_1 = (TextView) findViewById(R.id.main_tx_1);
+		main_iv_1 = (ImageView) findViewById(R.id.main_iv_1);
+		main_iv_2 = (ImageView) findViewById(R.id.main_iv_2);
+		di = getString(R.string.story_di).toString();
+		jige = getString(R.string.story_ge).toString();
+		title = getString(R.string.story_title).toString();
+		flam = getString(R.string.story_flam).toString();
+		isnull();
+		
+		main_bt_1=(Button)this.findViewById(R.id.main_bt_1);
+        
+	
+		//取出字串分割
+		cur.moveToFirst(); 
+		
+		if (totalCount != 0)
+		{
+	    Log.d("storyalbum","imagePathString"+cur.getString(3) );
+		imagePathString = cur.getString(3);
+		
+		if(imagePathString != null)
+		{
+		imagePath = imagePathString.split(" ");							
+		totalCount = cur.getCount();
+		textnumView.setText(di+index+""+"/"+totalCount+""+jige);
+	
+		 //   while (!cur.isAfterLast()) { 
+		if (mBooksDB.tabIsExist(TABLE_NAME)){
+		        int id=cur.getInt(0); 
+		        mTextView.setText(title+cur.getString(1) + "  "+flam
+
+		+ cur.getString(2));
+		      //  main_iv_2.setImageURI(Uri.parse(cur.getString(3)));//tupian
+		        main_iv_2.setImageURI(Uri.parse(imagePath[0]));//tupian
+		}
+		}
+		}
+		  //      cur.moveToNext(); 
+		  //    } 
+
+		    //点击按钮，切换图片
+	         main_iv_2.setOnClickListener(new OnClickListener(){
+	             @Override
+	             public void onClick(View v) {
+	            	 Intent ImageSwitchIntent = new Intent(MainActivity.this,ImageSwitcherActivity.class);
+	            	 String indexstring=index+"";
+	            	 ImageSwitchIntent.putExtra("path", indexstring);
+	            	  startActivity(ImageSwitchIntent);
+	                 }
+	             }
+	         );
+		rightBut.setOnClickListener(new Button.OnClickListener(){//创建监听对象
+        @Override
+            public void onClick(View v){
+            cur.moveToNext(); 
+            if(index == totalCount){
+               	cur.moveToFirst(); 
+               	index = 1;
+               	index --;
+                }
+        	  mTextView.setText(title+cur.getString(1) + "  "+flam
+
+        			+ cur.getString(2));
+        	  imagePathString = cur.getString(3);				
+		     imagePath = imagePathString.split(" ");
+        			      //  main_iv_2.setImageURI(Uri.parse(cur.getString(3)));//tupian 
+        	               main_iv_2.setImageURI(Uri.parse(imagePath[0]));//tupian
+        			        index ++;
+        			        textnumView.setText(di+index+""+"/"+totalCount+""+jige);
+       	                
+        	}
+          });     
+		
+		main_bt_1.setOnTouchListener(new OnTouchListener(){     
+            @Override    
+            public boolean onTouch(View v, MotionEvent event) {     
+                    if(event.getAction() == MotionEvent.ACTION_DOWN){     
+                            //更改为按下时的背景图片     
+                            v.setBackgroundResource(R.drawable.main_bt_1_back2);     
+                    }else if(event.getAction() == MotionEvent.ACTION_UP){     
+                            //改为抬起时的图片     
+                            v.setBackgroundResource(R.drawable.main_bt_1_back);   
+                            startActivity(new Intent(MainActivity.this,AddPic.class));                          
+                    }     
+                    
+                    return false;     
+            }     
+    });
+
+		
+	}
+	
+	@Override  
+    protected void onResume() {  
+        super.onResume();  
+        creatCur();
+        isnull();
+        if (totalCount != 0)//判断tab是否存在且不为空
+		{
+            	cur.moveToFirst(); 
+     	  mTextView.setText(title+cur.getString(1) + "  "+flam
+
+     			+ cur.getString(2));
+     	  imagePathString = cur.getString(3);				
+		     imagePath = imagePathString.split(" ");
+     			      //  main_iv_2.setImageURI(Uri.parse(cur.getString(3)));//tupian 
+     	               main_iv_2.setImageURI(Uri.parse(imagePath[0]));//tupian
+     			        textnumView.setText(di+index+""+"/"+totalCount+""+jige);
+		}  
+        
+    }  
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) 
+     {
+       
+        switch (item.getItemId()) {
+		case R.id.action_add://zengjun test
+			 startActivity(new Intent(MainActivity.this,AddPic.class));     
+			return true;    
+		case R.id.action_delete://zengjun test
+			if (totalCount != 0)
+			{
+				delete();
+			}else
+			{
+				Toast.makeText(this, "NO Storyalbum!", Toast.LENGTH_SHORT).show();
+			}
+			return true;  
+        }
+        return true;	
+     }
+	public void delete() {  //zengjun add删除当前
+		cur.moveToPosition(index-1);
+		STORYALBUM_ID = cur.getInt(0);
+		mBooksDB.delete(STORYALBUM_ID);
+		//cur.requery();
+		//刷新一次界面
+		 creatCur();
+		isnull();
+		if (totalCount != 0)//判断tab是否存在且不为空
+		{
+            	cur.moveToFirst(); 
+     	  mTextView.setText(title+cur.getString(1) + "  "+flam
+
+     			+ cur.getString(2));
+     	  imagePathString = cur.getString(3);				
+		     imagePath = imagePathString.split(" ");
+     			      //  main_iv_2.setImageURI(Uri.parse(cur.getString(3)));//tupian 
+     	               main_iv_2.setImageURI(Uri.parse(imagePath[0]));//tupian
+     			        textnumView.setText(di+index+""+"/"+totalCount+""+jige);
+		}               	
+		
+		Toast.makeText(this, "Delete Successed!", Toast.LENGTH_SHORT).show();
+          cur.close();
+		}
+	public void isnull()  //主界面显示判断
+	{
+		 if (totalCount != 0)//判断tab是否存在且不为空
+			{
+				textnumView.setVisibility(View.VISIBLE);
+				rightBut.setVisibility(View.VISIBLE);
+				mTextView.setVisibility(View.VISIBLE);
+				main_iv_2.setVisibility(View.VISIBLE);
+				main_tx_1.setVisibility(View.GONE);
+				main_iv_1.setVisibility(View.GONE);	
+				
+			}else{
+				main_tx_1.setVisibility(View.VISIBLE);
+				main_iv_1.setVisibility(View.VISIBLE);
+				main_iv_2.setVisibility(View.GONE);	
+				mTextView.setVisibility(View.GONE);
+				textnumView.setVisibility(View.GONE);
+				rightBut.setVisibility(View.GONE);
+					
+			}
+		
+	}
+	public void creatCur()  //获取数据库基本参数
+	{
+	mBooksDB = new StoryalbumDB(this);
+	index = 1;
+	cur = mBooksDB.select();				
+	totalCount = cur.getCount();
+	}
+	
+}

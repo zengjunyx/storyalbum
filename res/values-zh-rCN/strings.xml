@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">故事相册</string>
+    <string name="action_add">添加</string>
+     <string name="action_delete">删除</string>
+    <string name="hello_world">Hello world!</string>
+    <string name ="main_tx_1">无相册</string>
+    <string name ="main_bt_1">创建相册</string>
+      <string name ="main_bt_0">精品应用赚积分</string>
+    <string name="addpic_tx_1">创建相册</string>
+    <string name="addpic_tx_2">添加图片</string>
+    <string name="addpic_tx_3">从图库</string>
+    <string name="addpic_tx_4">按标签信息</string>
+    <string name ="createstory_tv_1">创建相册</string>
+    <string name="createstory_tv_2_1">已选中</string>
+    <string name="createstory_tv_2_2">\n</string>
+    <string name="createstory_tv_2_3">张相片</string>
+    <string name="createstory_tv_3">标题</string>
+    <string name="createstory_tv_4">主题</string>
+    <string name ="createstory_bt_2">创建相册</string>
+    <string name="addpic_tx_5">拍照</string>
+    <string name="appwidget_empty_text">没有相册</string>
+    <string name="appwidget_title">故事相册</string> 
+    
+    <string name="story_di">第</string>
+    <string name ="story_ge">个相册</string>
+    <string name="story_title">题目：</string>
+    <string name="story_flam">主题：</string>
+    <string name="story_next">下一个</string>
+    
+    <string name="story_tuku">从图库</string> 
+    <string name="story_sure">确定</string> 
+    
+</resources>

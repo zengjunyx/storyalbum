@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/MTK6589-I9868-new/!svn/ver/107/trunk/alps/packages/apps/Storyalbum/src/com/qian/storyalbum
+END
+MainActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/MTK6589-I9868-new/!svn/ver/107/trunk/alps/packages/apps/Storyalbum/src/com/qian/storyalbum/MainActivity.java
+END
+ImageTools.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/MTK6589-I9868-new/!svn/ver/107/trunk/alps/packages/apps/Storyalbum/src/com/qian/storyalbum/ImageTools.java
+END
+AddPic.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/MTK6589-I9868-new/!svn/ver/107/trunk/alps/packages/apps/Storyalbum/src/com/qian/storyalbum/AddPic.java
+END
+CreateStory.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/MTK6589-I9868-new/!svn/ver/107/trunk/alps/packages/apps/Storyalbum/src/com/qian/storyalbum/CreateStory.java
+END
+StoryalbumDB.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/MTK6589-I9868-new/!svn/ver/107/trunk/alps/packages/apps/Storyalbum/src/com/qian/storyalbum/StoryalbumDB.java
+END
+ImageSwitcherActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/MTK6589-I9868-new/!svn/ver/107/trunk/alps/packages/apps/Storyalbum/src/com/qian/storyalbum/ImageSwitcherActivity.java
+END
+GalleryActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/MTK6589-I9868-new/!svn/ver/107/trunk/alps/packages/apps/Storyalbum/src/com/qian/storyalbum/GalleryActivity.java
+END

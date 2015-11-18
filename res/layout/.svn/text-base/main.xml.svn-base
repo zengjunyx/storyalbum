@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/ep_land_recommend_bg" >
+
+    <TextView
+        android:id="@+id/main_tx_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/main_tx_1"
+        android:textColor="#FFFFFF"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/main_iv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/main_tx_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/popup_ic_recommendation"
+        android:visibility="visible"
+       />
+
+     <TextView
+        android:id="@+id/textnum"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+          android:layout_marginTop="10dp"
+           android:layout_marginLeft="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"                  
+        android:textSize="22px"
+        android:textColor="#FFFFFF"
+        android:visibility="gone"
+         />
+    
+    <Button
+        android:id="@+id/main_bt_1"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+         android:paddingLeft="20dp"
+         android:layout_marginTop="5dp"
+         android:layout_marginRight="10dp"
+        android:background="@drawable/main_bt_1_back"
+        android:text="@string/main_bt_1" 
+        android:textSize="22px"
+        android:textColor="#FFFFFF"
+         />
+     <!-- android:visibility="gone" -->
+     <ImageView
+        android:id="@+id/main_iv_2"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+       />
+    <TextView
+        android:id="@+id/main_tx_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_below="@+id/main_iv_2"
+          android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+         android:visibility="gone" />
+ 
+  <Button
+        android:id="@+id/nextbut"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+       android:layout_alignParentBottom="true"       
+        android:background="@drawable/ep_land_recommend_bg"
+        android:text="@string/story_next" 
+        android:textSize="22px"
+        android:textColor="#FFFFFF"
+        android:visibility="gone" 
+         />
+    	 
+
+</RelativeLayout>
